@@ -60,7 +60,7 @@ O rascunho é um array JSON. Cada elemento representa **uma questão regular + s
 
 | Campo | Regra |
 |---|---|
-| `enunciado_adaptado` | HTML simplificado seguindo SKILL-adaptacao.md. Inicia com `(BANCA - ANO)` (sem negrito) |
+| `enunciado_adaptado` | HTML seguindo SKILL-adaptacao.md. **Sempre inicia com `(BANCA - ANO)` (sem negrito). `[IMAGEM]` vem depois. Todo `[IMAGEM]`, gráfico, diagrama ou texto motivador deve ter 1–2 frases de contextualização logo após em baixo da referencia bibliografia (se houver) do marcador ou o trecho — explicando o que o elemento representa, sem revelar a resposta nem dar pistas.** |
 | `alternativas_adaptadas` | Exatamente 3 itens: `A`, `B`, `C`. Vazio `[]` se discursiva |
 | `gabarito_adaptado` | `"A"`, `"B"` ou `"C"` (objetiva) ou `""` (discursiva) |
 
@@ -74,7 +74,7 @@ O rascunho é um array JSON. Cada elemento representa **uma questão regular + s
 ```json
 [
   {
-    "enunciado": "<div style=\"text-align: justify;\"><span style=\"font-size: 0.875rem;\">(ENEM - 2020) O uso de equipamentos elétricos custa dinheiro e libera carbono na atmosfera. O gráfico mostra o custo e a quantidade de carbono por fonte de energia.</span></div><p>[IMAGEM]</p><p>CAVALCANTE, R. O vilão virou herói. Superinteressante, jul. 2007.</p><p>Em relação aos custos, a energia obtida a partir do vento é</p>",
+    "enunciado": "<p style=\"text-align:justify;\">(ENEM - 2020) O uso de equipamentos elétricos custa dinheiro e libera carbono na atmosfera. O gráfico mostra o custo e a quantidade de carbono por fonte de energia.</p><p>[IMAGEM]</p><p>CAVALCANTE, R. O vilão virou herói. Superinteressante, jul. 2007.</p><p>Em relação aos custos, a energia obtida a partir do vento é</p>",
     "tipo": "objetiva",
     "disciplina": "Física",
     "topico": "Energia",
@@ -83,7 +83,7 @@ O rascunho é um array JSON. Cada elemento representa **uma questão regular + s
     "banca": "ENEM",
     "ano": 2020,
     "dificuldade": "facil",
-    "gabarito": "B",
+    "gabarito": "E",
     "alternativas": [
       { "letra": "A", "texto": "mais cara que a nuclear e emite mais carbono." },
       { "letra": "B", "texto": "a segunda fonte mais cara e livre de emissões de carbono." },
@@ -91,11 +91,11 @@ O rascunho é um array JSON. Cada elemento representa **uma questão regular + s
       { "letra": "D", "texto": "mais barata que as demais e emite grandes quantidades de carbono." },
       { "letra": "E", "texto": "a fonte mais barata e livre de emissões de carbono." }
     ],
-    "enunciado_adaptado": "<p>[IMAGEM]</p><p>CAVALCANTE, R. O vilão virou herói. Superinteressante, jul. 2007.</p><div style=\"text-align: justify;\"><span style=\"font-size: 0.875rem;\">(ENEM - 2020) O gráfico acima mostra o custo e o carbono liberado por diferentes fontes de energia.</span></div><p><b>Analisando o gráfico, o que podemos afirmar sobre a energia eólica (do vento)?</b></p>",
+    "enunciado_adaptado": "<p style=\"text-align:justify;\">(ENEM - 2020)</p><p>[IMAGEM]</p><p style=\"text-align:justify;\">O gráfico acima mostra o custo (em centavos de real) e a quantidade de carbono liberado por diferentes fontes de energia.</p><p style=\"text-align:justify;\">CAVALCANTE, R. O vilão virou herói. Superinteressante, jul. 2007.</p><p><b>Analisando o gráfico, o que podemos afirmar sobre a energia eólica (do vento)?</b></p>",
     "alternativas_adaptadas": [
-      { "letra": "A", "texto": "É a segunda energia mais cara e não emite carbono." },
-      { "letra": "B", "texto": "É a mais barata e emite muito carbono." },
-      { "letra": "C", "texto": "É mais cara que a solar e também não emite carbono." }
+      { "letra": "A", "texto": "É a mais barata e não emite carbono." },
+      { "letra": "B", "texto": "É a segunda mais cara e não emite carbono." },
+      { "letra": "C", "texto": "É a mais barata, mas emite muito carbono." }
     ],
     "gabarito_adaptado": "A"
   }
@@ -138,9 +138,11 @@ gabarito_adaptado       ──────► alternativas_adaptadas
 - [ ] Todo `\` LaTeX está duplicado como `\\` nas strings JSON?
   - Errado: `$18\,\text{kg}$` → Certo: `$18\\,\\text{kg}$`
   - Errado: `$3 \times 10^9$` → Certo: `$3 \\times 10^9$`
+- [ ] Prefere HTML `<sup>`/`<sub>` a LaTeX para potências simples? (evita o problema de escaping)
 - [ ] Cada objeto tem todos os campos obrigatórios da regular?
 - [ ] `enunciado` começa com `(BANCA - ANO)` (sem negrito)?
-- [ ] `enunciado_adaptado` começa com `(BANCA - ANO)` (sem negrito)?
+- [ ] `enunciado_adaptado` começa com `(BANCA - ANO)` (sem negrito) como **primeiro elemento**?
+- [ ] `[IMAGEM]` vem **depois** de `(BANCA - ANO)`, nunca antes?
 - [ ] `alternativas_adaptadas` tem exatamente 3 itens (ou `[]` se discursiva)?
 - [ ] `gabarito_adaptado` é `"A"`, `"B"` ou `"C"` (ou `""` se discursiva)?
 - [ ] Imagens substituídas por `<p>[IMAGEM]</p>`?

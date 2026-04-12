@@ -400,7 +400,8 @@ def extrair_html(caminho: Path) -> str:
 EXTENSOES = {
     ".pdf":  extrair_pdf,
     ".docx": extrair_docx,
-    ".doc":  extrair_docx,
+    # NOTA: .doc (formato antigo) NÃO é suportado por python-docx.
+    # Converta para .docx antes de usar (ex: LibreOffice → soffice --convert-to docx).
     ".png":  extrair_imagem_ocr,
     ".jpg":  extrair_imagem_ocr,
     ".jpeg": extrair_imagem_ocr,
@@ -442,7 +443,7 @@ def main():
 
     manifest = {
         "modo": "lite-fiel",
-        "gerado_em": datetime.datetime.now().isoformat(),
+        "gerado_em": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "pasta_entrada": str(pasta_entrada),
         "total_arquivos": len(arquivos),
         "nota": (

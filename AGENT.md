@@ -63,7 +63,7 @@ Regras de conteúdo:
 - Enunciado sempre começa com `(BANCA - ANO)` (sem negrito). Omita só se banca e ano forem desconhecidos.
 - Imagens/figuras/gráficos → `<p>[IMAGEM]</p>`.
 - Textos motivadores → preserve antes do enunciado simplificado (veja SKILL-adaptacao.md Regra 1).
-- Pesquise na internet para preencher banca, ano e metadados se não encontrados no texto.
+- Para preencher banca, ano e metadados: (1) leia o texto extraído, (2) se necessário pesquise em **sites oficiais listados na SKILL-questbank.md ou em outros sites oficiais que encontrar** (domínios `.br`, `.gov.br`, `.edu.br`, sites institucionais de universidades) — nunca em fóruns ou blogs, (3) se não encontrar, use os valores padrão (`"Desconhecida"` / `0` / `""`). **Jamais inventar ou supor metadados sem evidência.**
 
 **Não inclua no rascunho**: `id`, `created_at`, `imagens`, `usedInExams`, `resolucao_link`.
 O `montador.py` os gera automaticamente.
@@ -91,7 +91,7 @@ Se houver erros de validação, corrija o `rascunho.json` e execute novamente.
 ## Estrutura de pastas
 
 ```
-questbank-lite/
+conversor-questoes-questbank/
 ├── AGENT.md              ← este arquivo
 ├── SKILL-rascunho.md     ← schema do rascunho.json (leia antes do Passo 4)
 ├── SKILL-questbank.md    ← regras de conteúdo da questão regular

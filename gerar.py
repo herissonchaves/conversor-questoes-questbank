@@ -1,4 +1,6 @@
-[
+import json
+
+data = [
   {
     "enunciado": "<p style=\"text-align:justify;\">(UERJ - 2025) Um dos animais de maior massa já identificados no planeta Terra é a baleia-azul. Admita que uma baleia dessa espécie tenha massa de 90 toneladas e volume de 86,5 m<sup>3</sup>. <b>A densidade dessa baleia, em g/cm<sup>3</sup>, é aproximadamente:</b></p>",
     "tipo": "objetiva",
@@ -11,37 +13,16 @@
     "dificuldade": "facil",
     "gabarito": "B",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "1,36"
-      },
-      {
-        "letra": "B",
-        "texto": "1,04"
-      },
-      {
-        "letra": "C",
-        "texto": "0,95"
-      },
-      {
-        "letra": "D",
-        "texto": "0,88"
-      }
+      { "letra": "A", "texto": "1,36" },
+      { "letra": "B", "texto": "1,04" },
+      { "letra": "C", "texto": "0,95" },
+      { "letra": "D", "texto": "0,88" }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(UERJ - 2025)</p><p style=\"text-align:justify;\">Um dos animais de maior massa já identificados no planeta Terra é a baleia-azul. Admita que uma baleia dessa espécie tenha massa de 90 toneladas e volume de 86,5 m<sup>3</sup>.</p><p><b>Qual é a densidade aproximada dessa baleia, em g/cm<sup>3</sup>?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "1,04"
-      },
-      {
-        "letra": "B",
-        "texto": "1,36"
-      },
-      {
-        "letra": "C",
-        "texto": "0,88"
-      }
+      { "letra": "A", "texto": "1,04" },
+      { "letra": "B", "texto": "1,36" },
+      { "letra": "C", "texto": "0,88" }
     ],
     "gabarito_adaptado": "A"
   },
@@ -57,41 +38,17 @@
     "dificuldade": "medio",
     "gabarito": "A",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "A = 3,0 · 10<sup>–4</sup> m<sup>2</sup>"
-      },
-      {
-        "letra": "B",
-        "texto": "A = 6,0 · 10<sup>–4</sup> m<sup>2</sup>"
-      },
-      {
-        "letra": "C",
-        "texto": "A = 3,0 · 10<sup>–5</sup> m<sup>2</sup>"
-      },
-      {
-        "letra": "D",
-        "texto": "A = 6,0 · 10<sup>–5</sup> m<sup>2</sup>"
-      },
-      {
-        "letra": "E",
-        "texto": "A = 3,0 · 10<sup>–6</sup> m<sup>2</sup>"
-      }
+      { "letra": "A", "texto": "A = 3,0 · 10<sup>–4</sup> m<sup>2</sup>" },
+      { "letra": "B", "texto": "A = 6,0 · 10<sup>–4</sup> m<sup>2</sup>" },
+      { "letra": "C", "texto": "A = 3,0 · 10<sup>–5</sup> m<sup>2</sup>" },
+      { "letra": "D", "texto": "A = 6,0 · 10<sup>–5</sup> m<sup>2</sup>" },
+      { "letra": "E", "texto": "A = 3,0 · 10<sup>–6</sup> m<sup>2</sup>" }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(UFPR - 2024)</p><p style=\"text-align:justify;\">Uma plataforma plana horizontal tem uma área A. Um objeto de massa m = 600 g é colocado sobre ela, exercendo uma pressão de p = 2,0 · 10<sup>4</sup> Pa.</p><p><b>Considerando g = 10 m/s<sup>2</sup>, qual é o valor correto da área A da plataforma?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "A = 3,0 · 10<sup>–4</sup> m<sup>2</sup>"
-      },
-      {
-        "letra": "B",
-        "texto": "A = 6,0 · 10<sup>–4</sup> m<sup>2</sup>"
-      },
-      {
-        "letra": "C",
-        "texto": "A = 3,0 · 10<sup>–5</sup> m<sup>2</sup>"
-      }
+      { "letra": "A", "texto": "A = 3,0 · 10<sup>–4</sup> m<sup>2</sup>" },
+      { "letra": "B", "texto": "A = 6,0 · 10<sup>–4</sup> m<sup>2</sup>" },
+      { "letra": "C", "texto": "A = 3,0 · 10<sup>–5</sup> m<sup>2</sup>" }
     ],
     "gabarito_adaptado": "A"
   },
@@ -107,41 +64,17 @@
     "dificuldade": "medio",
     "gabarito": "D",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "1,0 · 10<sup>5</sup> Pa."
-      },
-      {
-        "letra": "B",
-        "texto": "0,2 · 10<sup>5</sup> Pa."
-      },
-      {
-        "letra": "C",
-        "texto": "0,4 · 10<sup>5</sup> Pa."
-      },
-      {
-        "letra": "D",
-        "texto": "1,2 · 10<sup>5</sup> Pa."
-      },
-      {
-        "letra": "E",
-        "texto": "1,5 · 10<sup>5</sup> Pa."
-      }
+      { "letra": "A", "texto": "1,0 · 10<sup>5</sup> Pa." },
+      { "letra": "B", "texto": "0,2 · 10<sup>5</sup> Pa." },
+      { "letra": "C", "texto": "0,4 · 10<sup>5</sup> Pa." },
+      { "letra": "D", "texto": "1,2 · 10<sup>5</sup> Pa." },
+      { "letra": "E", "texto": "1,5 · 10<sup>5</sup> Pa." }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(FAMEMA - 2023)</p><p style=\"text-align:justify;\">Um reservatório começou a vazar quando o nível da água atingiu 2 m. Considere a pressão atmosférica igual a 1 · 10<sup>5</sup> Pa, a gravidade igual a 10 m/s<sup>2</sup> e a densidade da água igual a 1 · 10<sup>3</sup> kg/m<sup>3</sup>.</p><p><b>A água começou a vazar a partir de qual pressão total sentida no fundo do reservatório?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "0,2 · 10<sup>5</sup> Pa."
-      },
-      {
-        "letra": "B",
-        "texto": "1,2 · 10<sup>5</sup> Pa."
-      },
-      {
-        "letra": "C",
-        "texto": "1,5 · 10<sup>5</sup> Pa."
-      }
+      { "letra": "A", "texto": "0,2 · 10<sup>5</sup> Pa." },
+      { "letra": "B", "texto": "1,2 · 10<sup>5</sup> Pa." },
+      { "letra": "C", "texto": "1,5 · 10<sup>5</sup> Pa." }
     ],
     "gabarito_adaptado": "B"
   },
@@ -157,41 +90,17 @@
     "dificuldade": "facil",
     "gabarito": "B",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "20 000 Pa."
-      },
-      {
-        "letra": "B",
-        "texto": "40 000 Pa."
-      },
-      {
-        "letra": "C",
-        "texto": "50 000 Pa."
-      },
-      {
-        "letra": "D",
-        "texto": "60 000 Pa."
-      },
-      {
-        "letra": "E",
-        "texto": "80 000 Pa."
-      }
+      { "letra": "A", "texto": "20 000 Pa." },
+      { "letra": "B", "texto": "40 000 Pa." },
+      { "letra": "C", "texto": "50 000 Pa." },
+      { "letra": "D", "texto": "60 000 Pa." },
+      { "letra": "E", "texto": "80 000 Pa." }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(UEA - 2021)</p><p>[IMAGEM]</p><p style=\"text-align:justify;\">A imagem ilustra os grandes reservatórios elevados da cidade de Manaus.</p><p style=\"text-align:right;\">Disponível em: https://www.guiamanaus.24h.blospot.com</p><p style=\"text-align:justify;\">Suponha que exista uma tubulação vertical mantendo uma coluna de água com 4 m de altura. Considere a gravidade igual a 10 m/s<sup>2</sup> e a densidade da água como 1 · 10<sup>3</sup> kg/m<sup>3</sup>.</p><p><b>Qual será o valor da pressão hidrostática da água na base dessa coluna?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "20 000 Pa."
-      },
-      {
-        "letra": "B",
-        "texto": "40 000 Pa."
-      },
-      {
-        "letra": "C",
-        "texto": "80 000 Pa."
-      }
+      { "letra": "A", "texto": "20 000 Pa." },
+      { "letra": "B", "texto": "40 000 Pa." },
+      { "letra": "C", "texto": "80 000 Pa." }
     ],
     "gabarito_adaptado": "B"
   },
@@ -207,41 +116,17 @@
     "dificuldade": "medio",
     "gabarito": "C",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "1,13 · 10<sup>12</sup> Pa."
-      },
-      {
-        "letra": "B",
-        "texto": "1,06 · 10<sup>10</sup> Pa."
-      },
-      {
-        "letra": "C",
-        "texto": "1,13 · 10<sup>8</sup> Pa."
-      },
-      {
-        "letra": "D",
-        "texto": "1,13 · 10<sup>7</sup> Pa."
-      },
-      {
-        "letra": "E",
-        "texto": "1,06 · 10<sup>14</sup> Pa."
-      }
+      { "letra": "A", "texto": "1,13 · 10<sup>12</sup> Pa." },
+      { "letra": "B", "texto": "1,06 · 10<sup>10</sup> Pa." },
+      { "letra": "C", "texto": "1,13 · 10<sup>8</sup> Pa." },
+      { "letra": "D", "texto": "1,13 · 10<sup>7</sup> Pa." },
+      { "letra": "E", "texto": "1,06 · 10<sup>14</sup> Pa." }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(FMJ - 2022)</p><p style=\"text-align:justify;\">O submarino Fendouzhe chegou a 10 900 metros de profundidade. A pressão interna no submarino é igual à pressão atmosférica. A gravidade é 10 m/s<sup>2</sup> e a densidade da água do mar é 1,03 · 10<sup>3</sup> kg/m<sup>3</sup>.</p><p style=\"text-align:right;\">Disponível em: https://olhardigital.com.br. (adaptado)</p><p><b>Qual deve ser a diferença de pressão, de forma aproximada, suportada pela estrutura desse submarino para atingir essa profundidade máxima?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "1,13 · 10<sup>12</sup> Pa."
-      },
-      {
-        "letra": "B",
-        "texto": "1,13 · 10<sup>8</sup> Pa."
-      },
-      {
-        "letra": "C",
-        "texto": "1,13 · 10<sup>7</sup> Pa."
-      }
+      { "letra": "A", "texto": "1,13 · 10<sup>12</sup> Pa." },
+      { "letra": "B", "texto": "1,13 · 10<sup>8</sup> Pa." },
+      { "letra": "C", "texto": "1,13 · 10<sup>7</sup> Pa." }
     ],
     "gabarito_adaptado": "B"
   },
@@ -257,41 +142,17 @@
     "dificuldade": "facil",
     "gabarito": "A",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "20"
-      },
-      {
-        "letra": "B",
-        "texto": "15"
-      },
-      {
-        "letra": "C",
-        "texto": "10"
-      },
-      {
-        "letra": "D",
-        "texto": "5"
-      },
-      {
-        "letra": "E",
-        "texto": "0"
-      }
+      { "letra": "A", "texto": "20" },
+      { "letra": "B", "texto": "15" },
+      { "letra": "C", "texto": "10" },
+      { "letra": "D", "texto": "5" },
+      { "letra": "E", "texto": "0" }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(PUC-RJ - 2023)</p><p style=\"text-align:justify;\">Um mergulhador mergulha até uma profundidade em que a pressão total sentida por ele é de 3 vezes a pressão atmosférica. Sabe-se que a pressão atmosférica na superfície é 1,0 · 10<sup>5</sup> Pa, a aceleração da gravidade é 10 m/s<sup>2</sup> e a densidade da água é 1,0 g/cm<sup>3</sup> (1000 kg/m<sup>3</sup>).</p><p><b>Em qual profundidade em metros, o mergulhador se encontra?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "10"
-      },
-      {
-        "letra": "B",
-        "texto": "15"
-      },
-      {
-        "letra": "C",
-        "texto": "20"
-      }
+      { "letra": "A", "texto": "10" },
+      { "letra": "B", "texto": "15" },
+      { "letra": "C", "texto": "20" }
     ],
     "gabarito_adaptado": "C"
   },
@@ -307,41 +168,17 @@
     "dificuldade": "dificil",
     "gabarito": "B",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "0,8"
-      },
-      {
-        "letra": "B",
-        "texto": "0,9"
-      },
-      {
-        "letra": "C",
-        "texto": "1,0"
-      },
-      {
-        "letra": "D",
-        "texto": "1,2"
-      },
-      {
-        "letra": "E",
-        "texto": "1,8"
-      }
+      { "letra": "A", "texto": "0,8" },
+      { "letra": "B", "texto": "0,9" },
+      { "letra": "C", "texto": "1,0" },
+      { "letra": "D", "texto": "1,2" },
+      { "letra": "E", "texto": "1,8" }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(PUC-RJ - 2022)</p><p>[IMAGEM]</p><p style=\"text-align:justify;\">O diagrama mostra dois garrafões ligados à mesma base por um tubo com uma válvula. O da esquerda tem óleo e o da direita tem água, ambos abertos.</p><p style=\"text-align:justify;\">O garrafão da esquerda tem óleo (densidade de 0,8 · 10<sup>3</sup> kg/m<sup>3</sup>) e o da direita tem água (densidade de 1,0 · 10<sup>3</sup> kg/m<sup>3</sup>). Ambos iniciam com o líquido numa altura de 1,0 m. A válvula que os conecta será aberta, fazendo os fluidos encontrarem equilíbrio. Considere g = 10 m/s<sup>2</sup>.</p><p><b>Quando a água e o óleo pararem de se mover, qual será a altura final da água no garrafão da direita?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "0,8"
-      },
-      {
-        "letra": "B",
-        "texto": "0,9"
-      },
-      {
-        "letra": "C",
-        "texto": "1,0"
-      }
+      { "letra": "A", "texto": "0,8" },
+      { "letra": "B", "texto": "0,9" },
+      { "letra": "C", "texto": "1,0" }
     ],
     "gabarito_adaptado": "B"
   },
@@ -357,41 +194,17 @@
     "dificuldade": "medio",
     "gabarito": "A",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "3,6 · 10<sup>10</sup>"
-      },
-      {
-        "letra": "B",
-        "texto": "2,7 · 10<sup>9</sup>"
-      },
-      {
-        "letra": "C",
-        "texto": "5,4 · 10<sup>9</sup>"
-      },
-      {
-        "letra": "D",
-        "texto": "5,4 · 10<sup>10</sup>"
-      },
-      {
-        "letra": "E",
-        "texto": "3,6 · 10<sup>9</sup>"
-      }
+      { "letra": "A", "texto": "3,6 · 10<sup>10</sup>" },
+      { "letra": "B", "texto": "2,7 · 10<sup>9</sup>" },
+      { "letra": "C", "texto": "5,4 · 10<sup>9</sup>" },
+      { "letra": "D", "texto": "5,4 · 10<sup>10</sup>" },
+      { "letra": "E", "texto": "3,6 · 10<sup>9</sup>" }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(UEL - 2024)</p><p style=\"text-align:justify;\">Suponha que um robô de combate de massa 18 kg colida contra uma parede. O choque dura 9 ms e ocorre usando o bico da lança que mede 1 mm<sup>2</sup> de área. O robô vinha a 15 m/s e recuou após o choque na velocidade de 3 m/s.</p><p><b>Assinale a opção com o valor correto para a pressão exercida pela ponta da lança contra a parede durante essa colisão, em Pascal (Pa)?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "3,6 · 10<sup>9</sup>"
-      },
-      {
-        "letra": "B",
-        "texto": "3,6 · 10<sup>10</sup>"
-      },
-      {
-        "letra": "C",
-        "texto": "5,4 · 10<sup>9</sup>"
-      }
+      { "letra": "A", "texto": "3,6 · 10<sup>9</sup>" },
+      { "letra": "B", "texto": "3,6 · 10<sup>10</sup>" },
+      { "letra": "C", "texto": "5,4 · 10<sup>9</sup>" }
     ],
     "gabarito_adaptado": "B"
   },
@@ -407,41 +220,17 @@
     "dificuldade": "medio",
     "gabarito": "C",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "A densidade da espada é 7,60 g/cm<sup>3</sup>, e ela ficou totalmente imersa no líquido, pois é mais densa que o líquido."
-      },
-      {
-        "letra": "B",
-        "texto": "A densidade da espada é 7,60 g/cm<sup>3</sup>, e ela flutuou no líquido, pois é mais densa que o líquido."
-      },
-      {
-        "letra": "C",
-        "texto": "A densidade da espada é 9,12 g/cm<sup>3</sup>, e ela ficou totalmente imersa no líquido, pois sua densidade é o triplo da densidade do líquido."
-      },
-      {
-        "letra": "D",
-        "texto": "A densidade da espada é 9,12 g/cm<sup>3</sup>, e ela flutuou no líquido, pois é menos densa que o líquido em três vezes."
-      },
-      {
-        "letra": "E",
-        "texto": "A densidade da espada é 37,6 g/cm<sup>3</sup>, e ela afundou totalmente no líquido, pois é mais densa que o líquido."
-      }
+      { "letra": "A", "texto": "A densidade da espada é 7,60 g/cm<sup>3</sup>, e ela ficou totalmente imersa no líquido, pois é mais densa que o líquido." },
+      { "letra": "B", "texto": "A densidade da espada é 7,60 g/cm<sup>3</sup>, e ela flutuou no líquido, pois é mais densa que o líquido." },
+      { "letra": "C", "texto": "A densidade da espada é 9,12 g/cm<sup>3</sup>, e ela ficou totalmente imersa no líquido, pois sua densidade é o triplo da densidade do líquido." },
+      { "letra": "D", "texto": "A densidade da espada é 9,12 g/cm<sup>3</sup>, e ela flutuou no líquido, pois é menos densa que o líquido em três vezes." },
+      { "letra": "E", "texto": "A densidade da espada é 37,6 g/cm<sup>3</sup>, e ela afundou totalmente no líquido, pois é mais densa que o líquido." }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(UFMS - 2022)</p><p style=\"text-align:justify;\">Um artesão forjou uma espada utilizando 210 g de prata (densidade de 10,5 g/cm<sup>3</sup>), 386 g de ouro (19,3 g/cm<sup>3</sup>) e 1365 g de aço (7,8 g/cm<sup>3</sup>). O volume da espada equivaleu à soma exata do volume dos três metais reunidos. Logo depois, ela foi posta em um líquido de densidade 3,04 g/cm<sup>3</sup>.</p><p><b>Indique como ficou a densidade final que a espada alcançou e o que aconteceu a ela quando posta no banho de líquido.</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "A espada possui densidade de 9,12 g/cm<sup>3</sup>, por isso flutuou boiando na superfície do líquido."
-      },
-      {
-        "letra": "B",
-        "texto": "A espada possui densidade de 9,12 g/cm<sup>3</sup>, e afundou até ficar totalmente imersa por ter o triplo de densidade do líquido."
-      },
-      {
-        "letra": "C",
-        "texto": "A espada possui densidade de 7,60 g/cm<sup>3</sup>, e acabou afundando totalmente."
-      }
+      { "letra": "A", "texto": "A espada possui densidade de 9,12 g/cm<sup>3</sup>, por isso flutuou boiando na superfície do líquido." },
+      { "letra": "B", "texto": "A espada possui densidade de 9,12 g/cm<sup>3</sup>, e afundou até ficar totalmente imersa por ter o triplo de densidade do líquido." },
+      { "letra": "C", "texto": "A espada possui densidade de 7,60 g/cm<sup>3</sup>, e acabou afundando totalmente." }
     ],
     "gabarito_adaptado": "B"
   },
@@ -457,42 +246,21 @@
     "dificuldade": "dificil",
     "gabarito": "C",
     "alternativas": [
-      {
-        "letra": "A",
-        "texto": "2,4 m."
-      },
-      {
-        "letra": "B",
-        "texto": "4,6 m."
-      },
-      {
-        "letra": "C",
-        "texto": "9,0 m."
-      },
-      {
-        "letra": "D",
-        "texto": "1,3 · 10 m."
-      },
-      {
-        "letra": "E",
-        "texto": "1,8 · 10 m."
-      }
+      { "letra": "A", "texto": "2,4 m." },
+      { "letra": "B", "texto": "4,6 m." },
+      { "letra": "C", "texto": "9,0 m." },
+      { "letra": "D", "texto": "1,3 · 10 m." },
+      { "letra": "E", "texto": "1,8 · 10 m." }
     ],
     "enunciado_adaptado": "<p style=\"text-align:justify;\">(ITA - 2023)</p><p>[IMAGEM]</p><p style=\"text-align:justify;\">O diagrama descreve um recipiente tubular fino em formato de vaso comunicante (com hastes espaçadas por L = 20 cm). Ele possui dois líquidos dentro dele interagindo.</p><p style=\"text-align:justify;\">No repouso, o líquido A alcança a altura de 80 cm a partir da base que o separa de B, mas quando a estrutura é acelerada uniformemente de lado, por conta do peso e força geradas lateralmente, essa altura diminui para H = 76 cm. Considere g = 10 m/s<sup>2</sup>.</p><p><b>Sendo que a caixa do sistema parte do repouso, qual a distância que ela andou após ser acelerada num decorrer de 3,0 s?</b></p>",
     "alternativas_adaptadas": [
-      {
-        "letra": "A",
-        "texto": "2,4 m."
-      },
-      {
-        "letra": "B",
-        "texto": "4,6 m."
-      },
-      {
-        "letra": "C",
-        "texto": "9,0 m."
-      }
+      { "letra": "A", "texto": "2,4 m." },
+      { "letra": "B", "texto": "4,6 m." },
+      { "letra": "C", "texto": "9,0 m." }
     ],
     "gabarito_adaptado": "C"
   }
 ]
+
+with open('saida/rascunho.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)

@@ -98,11 +98,18 @@ Converta para HTML:
 
 ## Identificação de banca e ano
 
-Procure no cabeçalho do arquivo extraído ou nos enunciados por:
-- Nome da instituição: `ENEM`, `FUVEST`, `UNICAMP`, `VUNESP`, `UERJ`, `ITA`, `IME`, etc.
-- Ano em 4 dígitos: `2023`, `2024`, etc.
+**Ordem de busca — siga esta sequência. Se não encontrar em nenhuma etapa, use os valores
+padrão. Jamais invente banca, ano ou qualquer outro metadado.**
 
-Se não encontrar, **pesquise na internet** com fragmentos do enunciado entre aspas.
+1. **Texto extraído** — procure no cabeçalho, rodapé ou enunciados por:
+   - Nome da banca: `ENEM`, `FUVEST`, `UNICAMP`, `VUNESP`, `UERJ`, `ITA`, `IME`, etc.
+   - Ano em 4 dígitos: `2023`, `2024`, etc.
+
+2. **Busca na internet com trechos do enunciado** — use um fragmento único entre aspas
+   (ex: `"Suponha que o robô da RioBotz tenha massa de 18 kg"`) para localizar a prova
+   em sites oficiais. Consulte preferencialmente os sites listados em **SKILL-questbank.md** ou outros sites oficiais que encontrar (domínios `.br`, `.gov.br`, `.edu.br`, sites institucionais). Nunca use fóruns ou blogs.
+
+3. **Não encontrado** → `banca: "Desconhecida"`, `ano: 0`. Nunca suponha nem invente.
 
 ---
 
@@ -130,4 +137,5 @@ Associe cada gabarito à questão correspondente pelo número.
 - [ ] Questões objetivas têm todas as alternativas?
 - [ ] Tabelas de dados foram convertidas para `<table>` HTML?
 - [ ] Gabaritos associados corretamente?
-- [ ] Banca e ano identificados ou pesquisados?
+- [ ] Banca e ano identificados no texto ou pesquisados em site oficial?
+- [ ] Se não encontrado, usado `"Desconhecida"` / `0` em vez de inventar?

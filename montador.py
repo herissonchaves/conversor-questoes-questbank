@@ -63,7 +63,7 @@ def id_adaptada(id_regular: str) -> str:
 
 
 def timestamp_agora() -> str:
-    return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.") + "000Z"
+    return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
 
 
 def validar_rascunho(questoes: list) -> list[str]:
@@ -105,6 +105,14 @@ def validar_rascunho(questoes: list) -> list[str]:
             alts_ad = q.get("alternativas_adaptadas", [])
             if len(alts_ad) != 3:
                 erros.append(f"{prefixo}: versão adaptada deve ter exatamente 3 alternativas (tem {len(alts_ad)})")
+
+        if tipo == "discursiva":
+            alts = q.get("alternativas", [])
+            if len(alts) != 0:
+                erros.append(f"{prefixo}: questão discursiva não deve ter alternativas (tem {len(alts)})")
+            alts_ad = q.get("alternativas_adaptadas", [])
+            if len(alts_ad) != 0:
+                erros.append(f"{prefixo}: questão discursiva adaptada não deve ter alternativas (tem {len(alts_ad)})")
 
     return erros
 
