@@ -44,7 +44,7 @@ O rascunho é um array JSON. Cada elemento representa **uma questão regular + s
 
 | Campo | Regra |
 |---|---|
-| `enunciado` | HTML completo. Inicia com `<b>(BANCA - ANO)</b>`. Imagens → `<p>[IMAGEM]</p>` |
+| `enunciado` | HTML completo. Inicia com `(BANCA - ANO)` (sem negrito). Imagens → `<p>[IMAGEM]</p>` |
 | `tipo` | `"objetiva"` ou `"discursiva"` |
 | `disciplina` | Ex: `"Física"`, `"Química"`, `"Matemática"` |
 | `topico` | Tópico amplo. Ex: `"Mecânica"`, `"Termodinâmica"` |
@@ -60,7 +60,7 @@ O rascunho é um array JSON. Cada elemento representa **uma questão regular + s
 
 | Campo | Regra |
 |---|---|
-| `enunciado_adaptado` | HTML simplificado seguindo SKILL-adaptacao.md. Inicia com `<b>(BANCA - ANO)</b>` |
+| `enunciado_adaptado` | HTML simplificado seguindo SKILL-adaptacao.md. Inicia com `(BANCA - ANO)` (sem negrito) |
 | `alternativas_adaptadas` | Exatamente 3 itens: `A`, `B`, `C`. Vazio `[]` se discursiva |
 | `gabarito_adaptado` | `"A"`, `"B"` ou `"C"` (objetiva) ou `""` (discursiva) |
 
@@ -74,7 +74,7 @@ O rascunho é um array JSON. Cada elemento representa **uma questão regular + s
 ```json
 [
   {
-    "enunciado": "<div style=\"text-align: justify;\"><span style=\"font-size: 0.875rem;\"><b>(ENEM - 2020)</b> O uso de equipamentos elétricos custa dinheiro e libera carbono na atmosfera. O gráfico mostra o custo e a quantidade de carbono por fonte de energia.</span></div><p>[IMAGEM]</p><p>CAVALCANTE, R. O vilão virou herói. Superinteressante, jul. 2007.</p><p>Em relação aos custos, a energia obtida a partir do vento é</p>",
+    "enunciado": "<div style=\"text-align: justify;\"><span style=\"font-size: 0.875rem;\">(ENEM - 2020) O uso de equipamentos elétricos custa dinheiro e libera carbono na atmosfera. O gráfico mostra o custo e a quantidade de carbono por fonte de energia.</span></div><p>[IMAGEM]</p><p>CAVALCANTE, R. O vilão virou herói. Superinteressante, jul. 2007.</p><p>Em relação aos custos, a energia obtida a partir do vento é</p>",
     "tipo": "objetiva",
     "disciplina": "Física",
     "topico": "Energia",
@@ -91,7 +91,7 @@ O rascunho é um array JSON. Cada elemento representa **uma questão regular + s
       { "letra": "D", "texto": "mais barata que as demais e emite grandes quantidades de carbono." },
       { "letra": "E", "texto": "a fonte mais barata e livre de emissões de carbono." }
     ],
-    "enunciado_adaptado": "<p>[IMAGEM]</p><p>CAVALCANTE, R. O vilão virou herói. Superinteressante, jul. 2007.</p><div style=\"text-align: justify;\"><span style=\"font-size: 0.875rem;\"><b>(ENEM - 2020)</b> O gráfico acima mostra o custo e o carbono liberado por diferentes fontes de energia.</span></div><p><b>Analisando o gráfico, o que podemos afirmar sobre a energia eólica (do vento)?</b></p>",
+    "enunciado_adaptado": "<p>[IMAGEM]</p><p>CAVALCANTE, R. O vilão virou herói. Superinteressante, jul. 2007.</p><div style=\"text-align: justify;\"><span style=\"font-size: 0.875rem;\">(ENEM - 2020) O gráfico acima mostra o custo e o carbono liberado por diferentes fontes de energia.</span></div><p><b>Analisando o gráfico, o que podemos afirmar sobre a energia eólica (do vento)?</b></p>",
     "alternativas_adaptadas": [
       { "letra": "A", "texto": "É a segunda energia mais cara e não emite carbono." },
       { "letra": "B", "texto": "É a mais barata e emite muito carbono." },
@@ -135,9 +135,12 @@ gabarito_adaptado       ──────► alternativas_adaptadas
 ## Checklist do rascunho antes de salvar
 
 - [ ] É um array JSON válido?
+- [ ] Todo `\` LaTeX está duplicado como `\\` nas strings JSON?
+  - Errado: `$18\,\text{kg}$` → Certo: `$18\\,\\text{kg}$`
+  - Errado: `$3 \times 10^9$` → Certo: `$3 \\times 10^9$`
 - [ ] Cada objeto tem todos os campos obrigatórios da regular?
-- [ ] `enunciado` começa com `<b>(BANCA - ANO)</b>`?
-- [ ] `enunciado_adaptado` começa com ou contém `<b>(BANCA - ANO)</b>`?
+- [ ] `enunciado` começa com `(BANCA - ANO)` (sem negrito)?
+- [ ] `enunciado_adaptado` começa com `(BANCA - ANO)` (sem negrito)?
 - [ ] `alternativas_adaptadas` tem exatamente 3 itens (ou `[]` se discursiva)?
 - [ ] `gabarito_adaptado` é `"A"`, `"B"` ou `"C"` (ou `""` se discursiva)?
 - [ ] Imagens substituídas por `<p>[IMAGEM]</p>`?

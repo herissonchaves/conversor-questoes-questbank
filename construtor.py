@@ -101,10 +101,19 @@ def extrair_pdf(caminho: Path) -> str:
                     nome_fonte = span.get("font", "").lower()
                     sublinhado = "underline" in nome_fonte
 
+                    # Superscrito/subscrito: compara origem (y) do span com a linha
+                    origem_span = span.get("origin", [0, 0])
+                    origem_linha = linha.get("bbox", [0, 0, 0, 0])
+                    deslocamento_y = origem_linha[1] - origem_span[1]  # positivo = acima
+                    tamanho = span.get("size", 12)
+                    limiar  = tamanho * 0.3
+
                     t = texto
                     if sublinhado: t = f"<u>{t}</u>"
                     if italico:    t = f"<i>{t}</i>"
                     if negrito:    t = f"<b>{t}</b>"
+                    if deslocamento_y > limiar:   t = f"<sup>{t}</sup>"
+                    elif deslocamento_y < -limiar: t = f"<sub>{t}</sub>"
                     spans_html.append(t)
 
                 if spans_html:
@@ -200,10 +209,19 @@ def extrair_docx(caminho: Path) -> str:
             italico    = rpr is not None and rpr.find(qn("w:i"))  is not None
             sublinhado = rpr is not None and rpr.find(qn("w:u"))  is not None
 
+            # Superscrito / subscrito
+            vert_align = ""
+            if rpr is not None:
+                va = rpr.find(qn("w:vertAlign"))
+                if va is not None:
+                    vert_align = va.get(qn("w:val"), "")
+
             t = texto
-            if sublinhado: t = f"<u>{t}</u>"
-            if italico:    t = f"<i>{t}</i>"
-            if negrito:    t = f"<b>{t}</b>"
+            if sublinhado:           t = f"<u>{t}</u>"
+            if italico:              t = f"<i>{t}</i>"
+            if negrito:              t = f"<b>{t}</b>"
+            if vert_align == "superscript": t = f"<sup>{t}</sup>"
+            if vert_align == "subscript":   t = f"<sub>{t}</sub>"
             partes.append(t)
 
         return "".join(partes)

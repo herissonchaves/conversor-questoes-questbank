@@ -119,7 +119,7 @@ Estes campos devem ser **copiados sem alteração** da questão regular:
 <!-- Enunciado simplificado — máx. 3 frases, iniciando com (BANCA - ANO) em negrito -->
 <div style="text-align: justify;">
   <span style="font-size: 0.875rem;">
-    <b>(BANCA - ANO)</b> [Frase 1 de contextualização. Frase 2, se necessário.]
+    (BANCA - ANO) [Frase 1 de contextualização. Frase 2, se necessário.]
   </span>
 </div>
 
@@ -171,7 +171,7 @@ Estes campos devem ser **copiados sem alteração** da questão regular:
 <!-- Enunciado simplificado com prefixo (BANCA - ANO) -->
 <div style="text-align: justify;">
   <span style="font-size: 0.875rem;">
-    <b>(ENEM - 2020)</b> O gráfico acima mostra o custo (em centavos) e o carbono
+    (ENEM - 2020) O gráfico acima mostra o custo (em centavos) e o carbono
     liberado por diferentes fontes de energia.
   </span>
 </div>
@@ -199,7 +199,7 @@ Estes campos devem ser **copiados sem alteração** da questão regular:
 - [ ] Texto motivador preservado e posicionado **antes** do enunciado simplificado?
 - [ ] `[IMAGEM]` mantido na mesma posição da questão regular?
 - [ ] Tabelas de dados preservadas como `<table>`?
-- [ ] Enunciado simplificado começa com `(BANCA - ANO)` em negrito?
+- [ ] Enunciado simplificado começa com `(BANCA - ANO)` sem negrito?
 - [ ] Enunciado simplificado tem no máximo 3 frases?
 - [ ] Pergunta está em `<b>...</b>`?
 - [ ] Exatamente 3 alternativas (A, B, C)?

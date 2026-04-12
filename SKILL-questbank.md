@@ -56,8 +56,8 @@ Esta regra se aplica a:
 
 ### `enunciado`
 - HTML completo da questão.
-- **A primeira linha do enunciado deve sempre ser `(BANCA - ANO)`**, em negrito, seguida do texto da questão.
-  - Ex: `<span style="font-size: 0.875rem;"><b>(ENEM - 2020)</b> O uso de equipamentos elétricos...</span>`
+- **A primeira linha do enunciado deve sempre ser `(BANCA - ANO)`** (sem negrito), seguida do texto da questão.
+  - Ex: `<span style="font-size: 0.875rem;">(ENEM - 2020) O uso de equipamentos elétricos...</span>`
   - Se a banca for `"Desconhecida"` ou o ano for `0`, omita o prefixo.
 - Onde havia imagem/figura/gráfico: `<p>[IMAGEM]</p>`
 - Tabelas de dados: `<table>...</table>`

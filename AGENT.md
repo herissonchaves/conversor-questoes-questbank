@@ -59,8 +59,8 @@ Salve o array resultante em `saida/rascunho.json`.
 Regras de conteúdo:
 - Siga **SKILL-questbank.md** para os campos da questão regular.
 - Siga **SKILL-adaptacao.md** para `enunciado_adaptado`, `alternativas_adaptadas` e `gabarito_adaptado`.
-- Siga **SKILL-latex.md** para fórmulas matemáticas.
-- Enunciado sempre começa com `<b>(BANCA - ANO)</b>`. Omita só se banca e ano forem desconhecidos.
+- Siga **SKILL-latex.md** para fórmulas matemáticas. **Atenção: toda `\` LaTeX vira `\\` em strings JSON** (`\\text`, `\\times`, `\\frac`). Seção ⛔ da SKILL-latex.md.
+- Enunciado sempre começa com `(BANCA - ANO)` (sem negrito). Omita só se banca e ano forem desconhecidos.
 - Imagens/figuras/gráficos → `<p>[IMAGEM]</p>`.
 - Textos motivadores → preserve antes do enunciado simplificado (veja SKILL-adaptacao.md Regra 1).
 - Pesquise na internet para preencher banca, ano e metadados se não encontrados no texto.

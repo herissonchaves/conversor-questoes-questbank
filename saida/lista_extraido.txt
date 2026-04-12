@@ -1,0 +1,76 @@
+<p style="text-align:justify;">(UERJ) Um dos animais de maior massa já identificados no planeta Terra é a baleia-azul. Admita que uma baleia dessa espécie tenha massa de 90 toneladas e volume de 86,5 m3. <b>A densidade dessa baleia, em g/cm</b><b>3</b><b>, é aproximadamente:</b></p>
+<p style="text-align:justify;">1,36</p>
+<p style="text-align:justify;">1,04</p>
+<p style="text-align:justify;">0,95</p>
+<p style="text-align:justify;">0,88</p>
+<p style="text-align:justify;">(UFPR) Uma plataforma plana horizontal tem uma área A. Sobre ela, é colocado um objeto de massa <b>m</b> constante, que fica estático no local, sujeito apenas à força gravitacional e à força exercida pela plataforma. As forças envolvidas no problema são todas orientadas perpendicularmente à plataforma. O objeto exerce uma pressão de valor p = 2,0 · 104 Pa sobre a plataforma, e a massa do objeto vale m = 600 g.</p>
+<p style="text-align:justify;"><b>Considerando as informações apresentadas, assinale a alternativa que apresenta corretamente o valor da área A da plataforma.</b></p>
+<p style="text-align:justify;"><b>Dado:</b> g = 10 m/s2.</p>
+<p style="text-align:justify;">A = 3,0 · 10–4 m2</p>
+<p style="text-align:justify;">A = 6,0 · 10–4 m2</p>
+<p style="text-align:justify;">A = 3,0 · 10–5 m2</p>
+<p style="text-align:justify;">A = 6,0 · 10–5 m2</p>
+<p style="text-align:justify;">A = 3,0 · 10–6 m2</p>
+<p style="text-align:justify;">(FAMEMA) Um reservatório de água sem tampa apresentou uma trinca em seu fundo de tal forma que, para repará-lo, teve de ser esvaziado. Quando o reservatório foi novamente preenchido com água, observou-se que o tempo para o endurecimento do reparo não havia sido suficiente, pois, assim que o nível da água atingiu 2 m em relação ao fundo, o reparo foi desfeito e a água começou a vazar. Sendo a pressão atmosférica igual a 1 · 105 Pa, a aceleração da gravidade igual a 10 m/s2, e a densidade da água igual a 1 · 103 kg/m3, <b>a pressão a partir da qual a água começou a vazar foi de</b></p>
+<p style="text-align:justify;">1,0 · 105 Pa.</p>
+<p style="text-align:justify;">0,2 · 105 Pa.</p>
+<p style="text-align:justify;">0,4 · 105 Pa.</p>
+<p style="text-align:justify;">1,2 · 105 Pa.</p>
+<p style="text-align:justify;">1,5 · 105 Pa.</p>
+<p style="text-align:justify;">(UEA) O Reservatório do Mocó foi criado para solucionar problemas no abastecimento de água na cidade de Manaus. Nele, dois imensos tanques feitos de ferro ficam elevados por uma imponente estrutura interna, também feita de ferro.</p>
+<p style="text-align:center;">[IMAGEM]</p>
+<p style="text-align:right;">Disponível em: https://www.guiamanaus.24h.blospot.com</p>
+<p style="text-align:justify;">A elevação dos tanques garante a pressão necessária para a condução da água pelos encanamentos. Essa combinação de altura e pressão é utilizada em qualquer sistema de abastecimento, dos mais complexos aos mais simples, como no caso de caixas-d'água residenciais.</p>
+<p style="text-align:justify;">Suponha que, no Reservatório do Mocó, exista uma tubulação vertical que mantém uma coluna de água com 4 m de altura. Considerando a aceleração da gravidade igual a 10 m/s2 e que a densidade da água seja 1 · 103 kg/m3, <b>a pressão hidrostática da água na base dessa coluna será</b></p>
+<p style="text-align:justify;">20 000 Pa.</p>
+<p style="text-align:justify;">40 000 Pa.</p>
+<p style="text-align:justify;">50 000 Pa.</p>
+<p style="text-align:justify;">60 000 Pa.</p>
+<p style="text-align:justify;">80 000 Pa.</p>
+<p style="text-align:justify;">(FMJ) Um submarino tripulado chinês chamado Fendouzhe (ou “lutador”, em português), chegou a um dos pontos mais profundos dos oceanos: a Fossa das Marianas, no Oceano Pacífico. O veículo fez 13 mergulhos entre outubro e novembro de 2020, e, em 8 deles, superou uma profundidade de 10 mil metros. O mais profundo foi em 10 de novembro de 2020, quando chegou a 10 900 metros abaixo da superfície.</p>
+<p style="text-align:right;">Disponível em: https://olhardigital.com.br. (adaptado)</p>
+<p style="text-align:justify;">Considere que a aceleração gravitacional seja igual a 10 m/s2, que a densidade média da água do mar seja 1,03 · 103 kg/m3, e que a pressão interna do submarino seja igual à pressão atmosférica ao nível do mar. <b>Para atingir a profundidade máxima a que chegou, a estrutura do submarino deve suportar uma pressão de, no mínimo, aproximadamente,</b></p>
+<p style="text-align:justify;">1,13 · 1012 Pa.</p>
+<p style="text-align:justify;">1,06 · 1010 Pa.</p>
+<p style="text-align:justify;">1,13 · 108 Pa.</p>
+<p style="text-align:justify;">1,13 · 107 Pa.</p>
+<p style="text-align:justify;">1,06 · 1014 Pa.</p>
+<p style="text-align:justify;">(PUC-RJ) A pressão atmosférica na superfície de um lago é igual a 1,0 · 105 Pa. Um mergulhador experimental mergulha nesse lago até uma profundidade tal que a pressão total sentida por ele é o triplo da pressão atmosférica externa. <b>Qual é a profundidade, em metros, em que se encontra o mergulhador?</b></p>
+<p style="text-align:justify;"><b>Dados:</b> g = 10 m/s2; densidade da água = 1,0 g/cm3.</p>
+<p style="text-align:justify;">20</p>
+<p style="text-align:justify;">15</p>
+<p style="text-align:justify;">10</p>
+<p style="text-align:justify;">5</p>
+<p style="text-align:justify;">0</p>
+<p style="text-align:justify;">(PUC-RJ) Dois garrafões idênticos são mantidos abertos à atmosfera e estão conectados por meio de um tubo muito fino. A válvula que os conecta encontra-se inicialmente fechada, como mostrado na figura. O garrafão da esquerda é preenchido com um óleo de densidade 0,8 · 103 kg/m3, e o da direita é preenchido com água, cuja densidade é 1,0 · 103 kg/m3, até que ambos tenham seus líquidos em uma altura de 1,0 metro em relação ao fundo dos garrafões. A válvula, então, é aberta.</p>
+<p style="text-align:justify;">[IMAGEM]</p>
+<p style="text-align:justify;"><b>Após um tempo suficiente para que o sistema fique estático, qual é a altura final, em metros, da coluna de água à direita em relação ao fundo do garrafão?</b></p>
+<p style="text-align:justify;"><b>Dado:</b> g = 10 m/s2.</p>
+<p style="text-align:justify;">0,8</p>
+<p style="text-align:justify;">0,9</p>
+<p style="text-align:justify;">1,0</p>
+<p style="text-align:justify;">1,2</p>
+<p style="text-align:justify;">1,8</p>
+<p style="text-align:justify;">(UEL) A RioBotz, equipe de robótica da PUC-Rio, foi criada em 2003, quando estudantes, orientados pelo professor Marco Antônio Meggiolaro, decidiram construir robôs de combate. Hoje, a RioBotz é uma das 32 equipes que entraram na chave do Battlebots, programa de televisão norte-americano de luta de robôs. A equipe foi a única da América Latina a participar da competição.</p>
+<p style="text-align:justify;">Suponha que o robô da RioBotz tenha massa de 18 kg e possua uma lança cuja ponta apresenta uma área de secção transversal de 1 mm2. Admita que a lança atinja uma parede perpendicularmente com velocidade de 15 m/s, recue com uma velocidade de 3 m/s, e que o período da colisão tenha durado 9 ms.</p>
+<p style="text-align:justify;"><b>Com base nos conhecimentos de Física Mecânica, assinale a alternativa que apresenta corretamente a pressão (em Pa) exercida pela lança sobre a parede, desconsiderando atritos e deformações.</b></p>
+<p style="text-align:justify;">3,6 · 1010</p>
+<p style="text-align:justify;">2,7 · 109</p>
+<p style="text-align:justify;">5,4 · 109</p>
+<p style="text-align:justify;">5,4 · 1010</p>
+<p style="text-align:justify;">3,6 · 109</p>
+<p style="text-align:justify;">(UFMS) Um cuteleiro decidiu presentear seu melhor amigo, que é um grande admirador de ninjas e de samurais, com uma espada especial, jamais feita antes. Para confeccionar a espada, ele utilizou 210 gramas de prata, cuja densidade é de aproximadamente 10,5 g/cm3, 386 gramas de ouro, cuja densidade é de aproximadamente 19,3 g/cm3, e 1 365 gramas de um tipo especial de aço, cuja densidade é 7,8 g/cm3. Ao final do processo de confecção, o cuteleiro percebeu que o volume da espada correspondia à soma dos volumes dos materiais utilizados. Para finalizar o processo de confecção, o artesão colocou a espada em uma caixa contendo um líquido cuja densidade é 3,04 g/cm3. O que ocorreu na finalização da fabricação da espada? <b>Determine a resposta adequada quanto à densidade da espada e ao ocorrido quando esta foi colocada no referido líquido.</b></p>
+<p style="text-align:justify;">A densidade da espada é 7,60 g/cm3, e ela ficou totalmente imersa no líquido, pois é mais densa que o líquido.</p>
+<p style="text-align:justify;">A densidade da espada é 7,60 g/cm3, e ela flutuou no líquido, pois é mais densa que o líquido.</p>
+<p style="text-align:justify;">A densidade da espada é 9,12 g/cm3, e ela ficou totalmente imersa no líquido, pois sua densidade é o triplo da densidade do líquido.</p>
+<p style="text-align:justify;">A densidade da espada é 9,12 g/cm3, e ela flutuou no líquido, pois é menos densa que o líquido em três vezes.</p>
+<p style="text-align:justify;">A densidade da espada é 37,6 g/cm3, e ela afundou totalmente no líquido, pois é mais densa que o líquido.</p>
+<p style="text-align:justify;">(ITA) Considere um recipiente tubular fino, com área transversal constante, que contém dois líquidos imiscíveis A e B. As hastes verticais desse recipiente distam 20 cm uma da outra (L = 20 cm). Quando o recipiente está em repouso, o líquido A atinge uma altura de 80 cm em relação à linha de separação dos líquidos. Quando o recipiente é colocado em movimento retilíneo uniformemente variado, a altura de A com relação à linha de separação dos líquidos passa a ser H = 76 cm, conforme mostra a figura.</p>
+<p style="text-align:justify;"><b>Dado:</b> g = 10 m/s2.</p>
+<p style="text-align:center;">[IMAGEM]</p>
+<p style="text-align:justify;"><b>Considerando-se que o sistema parte do repouso, a distância percorrida pelo recipiente após um intervalo de 3,0 s é</b></p>
+<p style="text-align:justify;">2,4 m.</p>
+<p style="text-align:justify;">4,6 m.</p>
+<p style="text-align:justify;">9,0 m.</p>
+<p style="text-align:justify;">1,3 · 10 m.</p>
+<p style="text-align:justify;">1,8 · 10 m.</p>

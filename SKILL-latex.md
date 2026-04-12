@@ -1,107 +1,124 @@
-# SKILL — Regras de Formatação LaTeX
+# SKILL — Regras de LaTeX e Formatação Matemática
 
-## Regras obrigatórias
+---
 
-### 1. Vírgula decimal
-Use `{,}` para vírgula decimal em expressões LaTeX (padrão brasileiro):
+## ⛔ REGRA CRÍTICA — Escaping de backslash em JSON
 
-```
-✓  $9{,}8 \text{ m/s}^2$
-✗  $9.8 \text{ m/s}^2$
-```
+**Todo `\` de LaTeX vira `\\` dentro de strings JSON.**
 
-### 2. Unidades de medida
-Use `\,\text{}` para unidades de medida, separadas do número por espaço fino:
+| Você quer escrever | Coloque no JSON |
+|---|---|
+| `\text{kg}` | `\\text{kg}` |
+| `\times` | `\\times` |
+| `\frac{a}{b}` | `\\frac{a}{b}` |
+| `\vec{F}` | `\\vec{F}` |
+| `\Delta v` | `\\Delta v` |
+| `\,` (espaço fino) | `\\,` |
+| `\cdot` | `\\cdot` |
 
-```
-✓  $10\,\text{m/s}$
-✓  $9{,}8\,\text{m/s}^2$
-✓  $5{,}0 \times 10^3\,\text{J}$
-✗  $10 m/s$
-✗  $9.8 m/s^2$
-```
+**Por quê?** Em JSON, `\t` é caractere de tabulação, `\n` é quebra de linha, etc.
+Se você escrever `\text`, o parser JSON lê `\t` como tab e sobra `ext` — daí o bug
+`extkg` no lugar de `kg`.
 
-### 3. Subscritos e sobrescritos
-- Use `_{}` e `^{}` **sempre dentro de ambiente LaTeX** (`$...$`)
-- Nunca use `~` para subscritos fora de LaTeX
-- Nunca use `^` fora de LaTeX
-
-```
-✓  $v_0 = 5\,\text{m/s}$
-✓  $E = mc^2$
-✗  v~0~ = 5 m/s
-✗  E = mc^2  (fora do LaTeX)
-```
-
-### 4. Fórmulas inline e em bloco
-- **Inline**: envolva com `$...$`
-- **Bloco** (fórmula em linha própria): envolva com `$$...$$`
-
-```html
-O trabalho é dado por $W = F \cdot d \cdot \cos\theta$.
-
-$$E_k = \frac{1}{2}mv^2$$
-```
-
-### 5. Linhas de resposta (questões discursivas)
-Use `\_\_\_\_` para linhas de preenchimento em questões discursivas:
-
-```
-A velocidade inicial do projétil é \_\_\_\_ m/s.
-```
-
-### 6. Frações
-Use `\frac{numerador}{denominador}`:
-
-```
-✓  $\frac{d}{t}$
-✓  $\frac{mv^2}{r}$
-✗  d/t  (fora do LaTeX quando é expressão matemática)
-```
-
-### 7. Potências de 10 (notação científica)
-```
-✓  $3{,}0 \times 10^8\,\text{m/s}$
-✗  3,0 x 10^8 m/s
-```
-
-### 8. Graus e ângulos
-```
-✓  $30°$  ou  $30^\circ$
-✗  30 graus
+**Exemplos corretos no rascunho.json:**
+```json
+"enunciado": "...massa de $18\\,\\text{kg}$..."
+"enunciado": "...pressão de $3{,}6 \\times 10^{10}\\,\\text{Pa}$..."
+"texto": "$v_0 = 15\\,\\text{m/s}$"
 ```
 
 ---
 
-## Exemplos completos
+## Quando usar LaTeX vs HTML puro
 
-### Enunciado com fórmula inline
-```html
-<p>Um corpo de massa $m = 2\,\text{kg}$ é lançado com velocidade inicial
-$v_0 = 10\,\text{m/s}$. Calcule a energia cinética.</p>
+O extrator (`construtor.py`) já produz `<sup>` e `<sub>` para potências e índices.
+**Preserve o HTML quando possível — use LaTeX só quando HTML não é suficiente.**
+
+| Situação | Use | Exemplo |
+|---|---|---|
+| Potência/expoente simples em prosa | HTML `<sup>` | `m<sup>2</sup>`, `10<sup>5</sup>` |
+| Índice simples em prosa | HTML `<sub>` | `v<sub>0</sub>` |
+| Unidade simples em prosa | Texto puro | `18 kg`, `15 m/s` |
+| Notação científica na prosa | HTML `<sup>` | `3,6 · 10<sup>10</sup>` |
+| Fração | LaTeX `$\\frac{}{}$` | `$\\frac{F}{A}$` |
+| Letra grega | LaTeX | `$\\Delta v$`, `$\\rho$` |
+| Fórmula complexa inline | LaTeX `$...$` | `$E = mc^2$` |
+| Fórmula em bloco | LaTeX `$$...$$` | `$$F = ma$$` |
+| Raiz quadrada | LaTeX | `$\\sqrt{2}$` |
+| Vetor | LaTeX | `$\\vec{F}$` |
+
+---
+
+## Regras específicas
+
+### Vírgula decimal
+Use `{,}` dentro de LaTeX (padrão brasileiro):
+```
+✓  $3{,}6 \\times 10^{10}$
+✗  $3.6 \\times 10^{10}$
 ```
 
-### Enunciado com fórmula em bloco
-```html
-<p>A Segunda Lei de Newton estabelece que:</p>
-$$\vec{F}_{res} = m \cdot \vec{a}$$
-<p>Onde $m$ é a massa e $\vec{a}$ é a aceleração resultante.</p>
+### Unidades em expressões LaTeX
+Use `\\,\\text{}` para separar número de unidade **quando dentro de LaTeX**:
+```
+✓  $9{,}8\\,\\text{m/s}^2$
+✗  $9,8 m/s^2$
 ```
 
-### Alternativa com LaTeX
-```html
-{ "letra": "B", "texto": "<span>$v = 20\,\\text{m/s}$</span>" }
+### Subscritos e sobrescritos em LaTeX
+Sempre dentro de `$...$`:
+```
+✓  $v_0 = 5\\,\\text{m/s}$
+✗  v_0 = 5 m/s  (fora do LaTeX)
 ```
 
-> **Atenção**: dentro de strings JSON, use `\\` para representar `\` em LaTeX.
-> Ex: `\\frac`, `\\text`, `\\vec`.
+### Notação científica em LaTeX
+```
+✓  $3{,}0 \\times 10^8\\,\\text{m/s}$
+```
+
+### Frações
+```
+✓  $\\frac{F \\cdot \\Delta t}{A}$
+```
+
+### Linhas de resposta (discursivas)
+Use `\_\_\_\_`:
+```
+A pressão exercida é \_\_\_\_ Pa.
+```
+
+---
+
+## Exemplos completos corretos no rascunho.json
+
+### Enunciado com unidades em prosa (HTML puro — sem LaTeX):
+```json
+"enunciado": "<p>Suponha que o robô tenha massa de 18 kg e uma área de 1 mm<sup>2</sup>. A lança atinge a parede a 15 m/s e recua a 3 m/s em 9 ms.</p>"
+```
+
+### Alternativa com notação científica (HTML):
+```json
+{ "letra": "A", "texto": "3,6 · 10<sup>10</sup>" }
+```
+
+### Enunciado com fórmula inline (LaTeX — backslash dupla no JSON):
+```json
+"enunciado": "<p>A força resultante é $\\vec{F} = m \\cdot \\vec{a}$, onde $m$ é a massa.</p>"
+```
+
+### Alternativa com fórmula LaTeX:
+```json
+{ "letra": "B", "texto": "$\\frac{mv}{t} = 2{,}7 \\times 10^9\\,\\text{Pa}$" }
+```
 
 ---
 
 ## Checklist LaTeX
 
+- [ ] Toda `\` LaTeX está como `\\` na string JSON?
 - [ ] Vírgulas decimais usam `{,}`?
-- [ ] Unidades de medida usam `\,\text{}`?
+- [ ] Unidades simples em prosa ficaram como texto puro?
+- [ ] Potências em prosa usam `<sup>` HTML?
+- [ ] Unidades em expressões LaTeX usam `\\,\\text{}`?
 - [ ] Subscritos/sobrescritos dentro de `$...$`?
-- [ ] Fórmulas em bloco usam `$$...$$`?
-- [ ] Dentro de JSON, `\` está escapado como `\\`?

@@ -1,0 +1,14 @@
+{
+  "modo": "lite-fiel",
+  "gerado_em": "2026-04-12T12:04:03.574038",
+  "pasta_entrada": "entrada",
+  "total_arquivos": 1,
+  "nota": "Extração fiel com Tesseract OCR: negrito, itálico, sublinhado, alinhamento e equações preservados. Imagens/figuras substituídas por [IMAGEM].",
+  "arquivos": [
+    {
+      "arquivo": "lista.docx",
+      "status": "ok",
+      "texto_extraido_arquivo": "saida\\lista_extraido.txt"
+    }
+  ]
+}
