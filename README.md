@@ -35,9 +35,7 @@ questbank-lite/
 - Coloque PDFs, DOCXs ou imagens na pasta `entrada/`
 
 ### 3. Iniciar
-- No chat do Antigravity:
-Leia o AGENT.md. Converta os arquivos da pasta entrada em questões para o QuestBank. ID inicial é 
-
+- No chat do Antigravity: *"Converta os arquivos da pasta entrada em questões para o QuestBank"*
 - Informe o **ID inicial** quando o agente pedir (ex: `000052`)
 
 ### 4. Resultado
@@ -86,7 +84,19 @@ Leia o AGENT.md. Converta os arquivos da pasta entrada em questões para o Quest
 
 ## Dependências Python (instaladas automaticamente pelo construtor.py)
 
-- `pymupdf` — leitura de PDF
-- `python-docx` — leitura de DOCX
+- `pymupdf` — leitura e extração fiel de PDF (texto + formatação)
+- `python-docx` + `lxml` — leitura fiel de DOCX (negrito, itálico, tabelas, equações)
 - `beautifulsoup4` — leitura de HTML
-- `pytesseract` *(opcional)* — OCR em imagens (requer Tesseract instalado no sistema)
+- `pytesseract` — interface Python para o Tesseract OCR
+- `Pillow` — manipulação de imagens
+- `opencv-python-headless` + `numpy` — pré-processamento de imagens (CLAHE, binarização Otsu)
+
+## Dependência de sistema
+
+- **Tesseract OCR** com pacote de idioma português (`tesseract-ocr-por`)
+  - Windows: https://github.com/UB-Mannheim/tesseract/wiki
+  - macOS: `brew install tesseract tesseract-lang`
+  - Linux: `sudo apt install tesseract-ocr tesseract-ocr-por`
+
+O `construtor.py` detecta automaticamente o Tesseract nos locais de instalação padrão
+(Windows `Program Files`, macOS Homebrew, Linux `/usr/bin`).

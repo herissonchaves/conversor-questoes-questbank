@@ -12,6 +12,13 @@ Antigravity ler e segmentar as questões.
 
 Suporta: PDF (.pdf), Word (.docx/.doc), imagens de prova (.png/.jpg/etc.), HTML.
 
+Dependências Python (instaladas automaticamente):
+    pymupdf, python-docx, lxml, pytesseract, Pillow, opencv-python-headless, numpy
+
+Dependência de sistema (instalar manualmente):
+    Tesseract OCR — https://github.com/tesseract-ocr/tesseract
+    Com pacote de idioma português: tesseract-ocr-por
+
 Uso:
     python construtor.py [--entrada PASTA] [--saida PASTA]
 """
@@ -236,52 +243,119 @@ def extrair_docx(caminho: Path) -> str:
     return "\n".join(saida)
 
 
-# ── Extrator IMAGEM — OCR com aviso de fidelidade ────────────────────────────
+# ── Detecção do caminho do Tesseract OCR ─────────────────────────────────────
+
+def configurar_tesseract():
+    """
+    Auto-detecta o executável do Tesseract nos locais de instalação padrão.
+    Deve ser chamado uma vez antes de usar pytesseract.
+    """
+    import pytesseract
+    import shutil
+
+    # Se já está no PATH, não precisa fazer nada
+    if shutil.which("tesseract"):
+        return
+
+    candidatos = [
+        # Windows — instalador padrão
+        r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+        r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe",
+        # macOS — Homebrew
+        "/usr/local/bin/tesseract",
+        "/opt/homebrew/bin/tesseract",
+        # Linux — pacote apt/yum
+        "/usr/bin/tesseract",
+        "/usr/local/bin/tesseract",
+    ]
+    for caminho in candidatos:
+        if Path(caminho).exists():
+            pytesseract.pytesseract.tesseract_cmd = caminho
+            return
+
+    raise FileNotFoundError(
+        "Tesseract OCR não encontrado. Verifique a instalação e o PATH do sistema."
+    )
+
+
+# ── Extrator IMAGEM — OCR fiel com pré-processamento ─────────────────────────
 
 def extrair_imagem_ocr(caminho: Path) -> str:
     """
-    Arquivos de imagem de prova (.png, .jpg, etc.).
-    Tenta OCR via pytesseract (--psm 6, português + inglês).
-    Instrui explicitamente o agente a revisar o resultado com fidelidade total.
-    Se OCR não disponível, instrui o agente a processar visualmente.
+    Extrai texto de imagens de prova com alta fidelidade usando Tesseract OCR.
+
+    Pré-processamento aplicado para maximizar qualidade:
+      1. Converte para escala de cinza
+      2. Aumenta resolução para 300 DPI (padrão recomendado para OCR)
+      3. Aumenta contraste com equalização de histograma
+      4. Binarização adaptativa (Otsu) para texto sobre fundo complexo
+
+    Configuração Tesseract:
+      --psm 6  — bloco uniforme de texto (bom para provas com colunas)
+      -l por+eng — português como primário, inglês como fallback para siglas
+
+    O resultado é HTML com comentários de instrução para o agente.
     """
-    try:
-        importar_ou_instalar("pytesseract")
-        importar_ou_instalar("Pillow", "PIL")
-        from PIL import Image as PILImage
-        import pytesseract
+    importar_ou_instalar("pytesseract")
+    importar_ou_instalar("Pillow", "PIL")
+    importar_ou_instalar("opencv-python-headless", "cv2")
+    importar_ou_instalar("numpy", "numpy")
 
-        img    = PILImage.open(caminho)
-        config = "--psm 6 -l por+eng"
-        texto  = pytesseract.image_to_string(img, config=config)
+    import pytesseract
+    import cv2
+    import numpy as np
+    from PIL import Image as PILImage
 
-        if texto.strip():
-            return (
-                f"<!-- ═══════════════════════════════════════════════════ -->\n"
-                f"<!-- ARQUIVO DE IMAGEM: {caminho.name}                  -->\n"
-                f"<!-- Texto extraído via OCR. Preserve EXATAMENTE:       -->\n"
-                f"<!--   • negrito, itálico, sublinhado                   -->\n"
-                f"<!--   • alinhamento (esquerda/centro/direita)           -->\n"
-                f"<!--   • equações matemáticas                           -->\n"
-                f"<!--   • estrutura de tabelas                           -->\n"
-                f"<!-- Figuras/gráficos dentro da prova → marcar [IMAGEM] -->\n"
-                f"<!-- ═══════════════════════════════════════════════════ -->\n\n"
-                f"<pre>{texto.strip()}</pre>"
-            )
-    except Exception:
-        pass
+    configurar_tesseract()
+
+    # ── Pré-processamento ─────────────────────────────────────────────────────
+    img_pil = PILImage.open(caminho).convert("RGB")
+
+    # Garante resolução mínima de 300 DPI para OCR de qualidade
+    dpi_orig = img_pil.info.get("dpi", (72, 72))
+    dpi_x    = dpi_orig[0] if isinstance(dpi_orig, tuple) else dpi_orig
+    if dpi_x < 200:
+        fator   = 300 / max(dpi_x, 1)
+        w, h    = img_pil.size
+        img_pil = img_pil.resize((int(w * fator), int(h * fator)), PILImage.LANCZOS)
+
+    # Converte para array OpenCV (BGR)
+    img_cv = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
+
+    # Escala de cinza
+    cinza = cv2.cvtColor(img_cv, cv2.COLOR_BGR2GRAY)
+
+    # Equalização de histograma CLAHE (preserva contraste local — bom para provas escaneadas)
+    clahe  = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    cinza  = clahe.apply(cinza)
+
+    # Binarização adaptativa de Otsu
+    _, binaria = cv2.threshold(cinza, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+    img_final = PILImage.fromarray(binaria)
+
+    # ── OCR ───────────────────────────────────────────────────────────────────
+    # psm 6 = bloco uniforme; oem 3 = motor LSTM (melhor qualidade)
+    config = "--psm 6 --oem 3 -l por+eng"
+    texto  = pytesseract.image_to_string(img_final, config=config)
+
+    if not texto.strip():
+        texto = "[OCR não retornou texto. Verifique a qualidade da imagem.]"
 
     return (
-        f"<!-- ═══════════════════════════════════════════════════════ -->\n"
-        f"<!-- ARQUIVO DE IMAGEM: {caminho.name}                      -->\n"
-        f"<!-- OCR indisponível. Analise visualmente e transcreva:     -->\n"
-        f"<!--   • todo o texto fiel ao original                       -->\n"
-        f"<!--   • negrito, itálico, sublinhado, alinhamento           -->\n"
-        f"<!--   • equações matemáticas (use LaTeX)                    -->\n"
-        f"<!--   • tabelas como <table> HTML                           -->\n"
-        f"<!--   • figuras/gráficos → [IMAGEM]                         -->\n"
-        f"<!-- ═══════════════════════════════════════════════════════ -->\n"
-        f"[PROCESSAR VISUALMENTE: {caminho.name}]"
+        f"<!-- ══════════════════════════════════════════════════════════ -->\n"
+        f"<!-- ARQUIVO DE IMAGEM: {caminho.name}                         -->\n"
+        f"<!-- Texto extraído via Tesseract OCR (por+eng, psm6, CLAHE).  -->\n"
+        f"<!--                                                            -->\n"
+        f"<!-- AO USAR ESTE TEXTO, preserve EXATAMENTE:                  -->\n"
+        f"<!--   • negrito, itálico, sublinhado                          -->\n"
+        f"<!--   • alinhamento (esquerda / centro / direita)             -->\n"
+        f"<!--   • equações matemáticas → converter para LaTeX           -->\n"
+        f"<!--   • estrutura de tabelas → converter para <table> HTML    -->\n"
+        f"<!--   • figuras / gráficos dentro da prova → [IMAGEM]         -->\n"
+        f"<!-- O OCR pode errar em símbolos matemáticos — revise sempre. -->\n"
+        f"<!-- ══════════════════════════════════════════════════════════ -->\n\n"
+        f"<pre>{texto.strip()}</pre>"
     )
 
 
@@ -354,7 +428,7 @@ def main():
         "pasta_entrada": str(pasta_entrada),
         "total_arquivos": len(arquivos),
         "nota": (
-            "Extração fiel: negrito, itálico, sublinhado, alinhamento e equações preservados. "
+            "Extração fiel com Tesseract OCR: negrito, itálico, sublinhado, alinhamento e equações preservados. "
             "Imagens/figuras substituídas por [IMAGEM]."
         ),
         "arquivos": [],
