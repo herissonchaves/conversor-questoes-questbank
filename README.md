@@ -38,7 +38,7 @@ questbank-lite/
 - No chat do Antigravity: 
 
 Leia o AGENT.md. Converta os arquivos da pasta entrada em questões para o QuestBank.
-ID inicial é 01
+ID inicial é 
 
 - Informe o **ID inicial** quando o agente pedir (ex: `000052`)
 

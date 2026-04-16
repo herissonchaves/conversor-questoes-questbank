@@ -79,6 +79,20 @@ Se houver erros de validação, corrija o `rascunho.json` e execute novamente.
 
 ---
 
+## Fluxo alternativo — saída em LaTeX (.tex)
+
+Em vez de gerar `rascunho.json` → `questoes_exportadas.json`, você pode
+produzir diretamente um arquivo `saida/questoes.tex` que é importado pelo
+QuestBank via servidor local `questbank-server`.
+
+Vantagens: edição cômoda em qualquer editor LaTeX antes da importação,
+backslash único (sem o inferno de `\\`), imagens por caminho relativo.
+
+Quando o usuário pedir **saída em LaTeX** (`.tex`), siga a
+**SKILL-latex-output.md** no lugar dos passos 4 e 5 acima.
+
+---
+
 ## Regras gerais
 
 - **NUNCA** pule o Passo 1.
